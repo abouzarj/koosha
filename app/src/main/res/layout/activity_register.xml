@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/cardview_light_background"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/baseline_lens_24"
+                android:layout_marginLeft="-40dp"
+                android:layout_marginTop="16dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="ثبت نام"
+                android:textStyle="bold"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="150dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/title"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:fontFamily="@font/estedad"
+                />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/r_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mat"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:defaultFocusHighlightEnabled="true"
+                android:elevation="2dp"
+                app:strokeWidth="1dp"
+                >
+
+                <EditText
+                    android:id="@+id/username_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/shape_username"
+                    android:hint="نام کاربری"
+                    android:drawableRight="@drawable/username_gray_icon"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="1dp"
+                    />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mat1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="2dp"
+                app:strokeWidth="1dp">
+
+                <EditText
+                    android:id="@+id/phone_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/shape_username"
+                    android:hint="شماره تلفن"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="4dp"
+                    android:drawableRight="@drawable/password_gray_icon"
+                    android:layout_margin="1dp"
+                    />
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+            <Button
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:text="ثبت نام"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:layout_margin="20dp"
+                android:elevation="2dp"
+                android:stateListAnimator="@animator/button_raise"
+                />
+
+            <ProgressBar
+                android:id="@+id/register_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/r_userame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="این نام کاربری انتخاب شده است"
+                android:textColor="@color/grc_700"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/r_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="این شماره تلفن قبلاً ثبت شده است"
+                android:textColor="@color/grc_700"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/no_internet_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="اتصال خود به اینترنت را بررسی کنید"
+            android:textColor="@color/grc_700"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="invisible"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/baseline_lens_24"
+                android:layout_marginRight="-40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="16dp"/>
+        </RelativeLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

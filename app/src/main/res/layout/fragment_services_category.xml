@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".services.ServicesCategoryFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/collection_no_internet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:src="@drawable/baseline_wifi_off_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="لطفاً اتصال خود به اینترنت را بررسی کنید."
+            android:fontFamily="@font/estedad"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_margin="4dp"
+            android:textColor="@color/black"/>
+        <Button
+            android:id="@+id/try_again_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="تلاش دوباره"
+            android:layout_margin="4dp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
+        android:elevation="10dp"
+        android:background="@drawable/er_border"
+        android:layout_margin="8dp"
+
+        >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_alignParentLeft="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    >
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/baseline_search_24"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_toLeftOf="@id/logo"
+                        android:text="جستجو در خدمات"
+                        android:fontFamily="@font/estedad"
+                        />
+
+                </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/collection_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cat_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ProgressBar
+            android:id="@+id/collection_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+
+
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

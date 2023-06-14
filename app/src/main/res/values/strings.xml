@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">KishServices</string>
+    <string name="new_account"><u>ایجاد حساب جدید</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello order fragment</string>
+</resources>

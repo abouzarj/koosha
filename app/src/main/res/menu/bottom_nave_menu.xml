@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/profile_menu_item"
+        android:title="حساب کاربری"
+        android:icon="@drawable/profile_state"/>
+
+    <item
+        android:id="@+id/services_menu_item"
+        android:title="خدمات"
+        android:icon="@drawable/services_state"/>
+
+    <item
+        android:id="@+id/orders_menu_item"
+        android:title="سفارشات"
+        android:icon="@drawable/orders_state"/>
+
+</menu>

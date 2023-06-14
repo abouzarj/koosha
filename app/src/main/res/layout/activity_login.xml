@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity"
+android:background="@color/cardview_light_background"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/baseline_lens_24"
+            android:layout_marginLeft="-40dp"
+            android:layout_marginTop="16dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="ورود"
+            android:textStyle="bold"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="150dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/title"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:fontFamily="@font/estedad"
+            />
+
+    </RelativeLayout>
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:defaultFocusHighlightEnabled="true"
+        android:elevation="2dp"
+        app:strokeWidth="1dp"
+        >
+
+        <EditText
+            android:id="@+id/phone_ed"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/shape_username"
+            android:hint="شماره تلفن"
+            android:drawableRight="@drawable/username_gray_icon"
+            android:layout_gravity="center_vertical"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:text="ورود"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        android:elevation="2dp"
+        android:stateListAnimator="@animator/button_raise"
+        android:id="@+id/rb"
+        />
+
+    <TextView
+        android:id="@+id/new_acount_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/new_account"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        />
+
+    <TextView
+        android:id="@+id/no_internet_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grc_700"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/baseline_lens_24"
+            android:layout_marginRight="-40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"/>
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+</ScrollView>
