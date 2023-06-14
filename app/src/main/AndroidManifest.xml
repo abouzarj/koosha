@@ -17,6 +17,9 @@
         android:theme="@style/Theme.KishServices"
         tools:targetApi="31">
         <activity
+            android:name=".services.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity

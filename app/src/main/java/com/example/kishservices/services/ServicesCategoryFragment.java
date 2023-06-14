@@ -3,6 +3,7 @@ package com.example.kishservices.services;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -22,6 +23,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import com.example.kishservices.R;
 import com.example.kishservices.pojo.LoginResponse;
@@ -94,7 +96,6 @@ public class ServicesCategoryFragment extends Fragment {
 
             progressBar = rootView.findViewById(R.id.collection_progress);
 
-
             apiInterface = APIClient.getClient().create(APIInterface.class);
 
             noInternetLayout = rootView.findViewById(R.id.collection_no_internet);
@@ -109,6 +110,16 @@ public class ServicesCategoryFragment extends Fragment {
 
             checkInternetConnection();
 
+            RelativeLayout searchBarLayout = rootView.findViewById(R.id.collection_search_bar);
+            searchBarLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(),SearchActivity.class);
+                    startActivity(intent);
+
+                }
+            });
+
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setAdapter(adapter);
 
@@ -118,6 +129,7 @@ public class ServicesCategoryFragment extends Fragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                checkInternetConnection();
                 swipeRefreshLayout.setRefreshing(false);
                 collectionResponseArrayList.clear();
                 adapter.notifyDataSetChanged();
