@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +29,6 @@ import com.example.kishservices.pojo.LoginResponse;
 import com.example.kishservices.retrofit.APIClient;
 import com.example.kishservices.retrofit.APIInterface;
 import com.example.kishservices.services.pojo.CollectionResponse;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -133,7 +131,7 @@ public class ServicesCategoryFragment extends Fragment {
                 swipeRefreshLayout.setRefreshing(false);
                 collectionResponseArrayList.clear();
                 adapter.notifyDataSetChanged();
-                getData();
+
             }
         });
 

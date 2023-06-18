@@ -40,9 +40,11 @@
             android:textColor="@color/black"/>
     </LinearLayout>
 
+
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="64dp"
         android:contentInsetLeft="0dp"
         android:contentInsetStart="0dp"
         app:contentInsetLeft="0dp"
@@ -52,43 +54,57 @@
         app:contentInsetRight="0dp"
         app:contentInsetEnd="0dp"
         android:elevation="10dp"
-        android:background="@drawable/er_border"
-        android:layout_margin="8dp"
-
+        android:background="@color/gr_300"
         >
 
-                <RelativeLayout
-                    android:id="@+id/collection_search_bar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="56dp"
-                    android:layout_alignParentLeft="true"
-                    android:background="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/er_border"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            >
 
-                    <ImageView
-                        android:id="@+id/logo"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginRight="8dp"
-                        android:src="@drawable/baseline_search_24"
-                        />
+            <RelativeLayout
+                android:id="@+id/collection_search_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_alignParentLeft="true"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="24dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_toLeftOf="@id/logo"
-                        android:text="جستجو در خدمات"
-                        android:fontFamily="@font/estedad"
-                        />
+                >
 
-                </RelativeLayout>
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/baseline_search_24"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@id/logo"
+                    android:text="جستجو در خدمات"
+                    android:fontFamily="@font/estedad"
+                    />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
 
     </androidx.appcompat.widget.Toolbar>
 

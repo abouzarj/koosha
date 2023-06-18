@@ -40,7 +40,6 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
         holder.categoryText.setText(collectionResponse.title);
         URL url = collectionResponse.image;
         Picasso.get().load(url.toString()).into(holder.categoryImage);
-
     }
 
     @Override

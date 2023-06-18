@@ -11,6 +11,16 @@
         <item name="android:color">@color/white</item>
     </style>
 
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+
+        <item name="android:layoutDirection">rtl</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:state_focused">true</item>
+        <item name="fontFamily">@font/estedad</item>
+
+    </style>
+
 
 
 </resources>
