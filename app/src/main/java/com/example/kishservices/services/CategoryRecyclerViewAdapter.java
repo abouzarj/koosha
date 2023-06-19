@@ -49,6 +49,7 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(),ServicesActivity.class);
                 intent.putExtra("collection_id",collectionResponse.id);
+                intent.putExtra("title",collectionResponse.title);
                 view.getContext().startActivity(intent);
             }
         });

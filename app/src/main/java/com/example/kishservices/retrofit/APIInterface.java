@@ -40,11 +40,7 @@ public interface APIInterface {
     @GET("servicemanager/services")
     Call<ServicesResponse> SearchServices(@Header("Authorization") String authorization, @Query("search") String search,@Query("page") Integer page,@Query("collection_id") Integer collection_id);
 
-//    @Headers({
-//            "Accept: application/json",
-//    })
-//    @GET("servicemanager/services")
-//    Call<ServicesResponse> services(@Header("Authorization") String authorization, @Query("collection_id") Integer collection_id,@Query("page") Integer page);
+
 
 
 
