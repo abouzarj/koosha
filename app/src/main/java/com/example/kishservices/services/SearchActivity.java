@@ -125,7 +125,7 @@ public class SearchActivity extends AppCompatActivity {
     private void getData(String query, Integer pageNumber){
         query = query.trim();
         if (query.isEmpty()) return;
-        Call<ServicesResponse> servicesResponseCall = apiInterface.SearchServices(sharedPreferences.getString("access","").toString(),query.trim(),pageNumber);
+        Call<ServicesResponse> servicesResponseCall = apiInterface.SearchServices(sharedPreferences.getString("access","").toString(),query.trim(),pageNumber,null);
         servicesResponseCall.enqueue(new Callback<ServicesResponse>() {
             @Override
             public void onResponse(Call<ServicesResponse> call, Response<ServicesResponse> response) {

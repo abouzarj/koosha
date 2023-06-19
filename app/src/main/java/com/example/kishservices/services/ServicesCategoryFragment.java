@@ -36,7 +36,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ServicesCategoryFragment extends Fragment {
+public class ServicesCategoryFragment extends Fragment  {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor myEdit;
 
@@ -134,6 +134,8 @@ public class ServicesCategoryFragment extends Fragment {
 
             }
         });
+
+
 
 
         // Inflate the layout for this fragment

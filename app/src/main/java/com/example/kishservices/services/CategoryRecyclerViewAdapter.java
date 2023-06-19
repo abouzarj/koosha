@@ -1,6 +1,7 @@
 package com.example.kishservices.services;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,8 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
     private ArrayList<CollectionResponse> collectionResponseArrayList;
     private Context mContext;
 
+
+
     public CategoryRecyclerViewAdapter(ArrayList<CollectionResponse> collectionResponseArrayList, Context mContext){
         this.collectionResponseArrayList= collectionResponseArrayList;
         this.mContext=mContext;
@@ -40,6 +43,15 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
         holder.categoryText.setText(collectionResponse.title);
         URL url = collectionResponse.image;
         Picasso.get().load(url.toString()).into(holder.categoryImage);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),ServicesActivity.class);
+                intent.putExtra("collection_id",collectionResponse.id);
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -47,8 +59,12 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
         return collectionResponseArrayList.size();
     }
 
+
+
+
+
     // View Holder Class to handle Recycler View.
-    public class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    public class RecyclerViewHolder extends RecyclerView.ViewHolder  {
 
         private TextView categoryText;
         private ShapeableImageView categoryImage;
@@ -57,6 +73,12 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
             super(itemView);
             categoryText = itemView.findViewById(R.id.category_text);
             categoryImage = itemView.findViewById(R.id.category_image);
+
         }
+
+
+
     }
+
+
 }
