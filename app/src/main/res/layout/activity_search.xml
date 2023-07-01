@@ -52,7 +52,7 @@
         app:contentInsetRight="0dp"
         app:contentInsetEnd="0dp"
         android:elevation="10dp"
-        android:background="@color/gr_300">
+        android:background="@color/gr500">
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"

@@ -1,6 +1,7 @@
 package com.example.kishservices.services;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,15 @@ public class ServiceRecyclerViewAdapter extends RecyclerView.Adapter<ServiceRecy
         holder.serviceTitle.setText(service.title);
         URL url = service.image;
         Picasso.get().load(url.toString()).into(holder.serviceImage);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(),ServiceDetailsActivity.class);
+                intent.putExtra("object",service);
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

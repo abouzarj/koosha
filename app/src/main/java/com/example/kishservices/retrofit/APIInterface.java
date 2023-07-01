@@ -4,6 +4,7 @@ import com.example.kishservices.pojo.LoginResponse;
 import com.example.kishservices.pojo.UpdatePassResponse;
 import com.example.kishservices.pojo.Username;
 import com.example.kishservices.services.pojo.CollectionResponse;
+import com.example.kishservices.services.pojo.QuestionsResponse;
 import com.example.kishservices.services.pojo.ServicesResponse;
 
 import java.util.ArrayList;
@@ -40,8 +41,11 @@ public interface APIInterface {
     @GET("servicemanager/services")
     Call<ServicesResponse> SearchServices(@Header("Authorization") String authorization, @Query("search") String search,@Query("page") Integer page,@Query("collection_id") Integer collection_id);
 
-
-
+    @Headers({
+            "Accept: application/json",
+    })
+    @GET("servicemanager/questions")
+    Call<ArrayList<QuestionsResponse>> getQuestions(@Header("Authorization") String authorization, @Query("service_id") Integer service_id);
 
 
 }
