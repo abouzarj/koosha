@@ -152,7 +152,7 @@ public class ServicesCategoryFragment extends Fragment  {
         if(isConnected){
             noInternetLayout.setVisibility(View.GONE);
             //get access from the server
-            getAccess();
+//            getAccess();
 
             //get the collection list from the server
             getData();

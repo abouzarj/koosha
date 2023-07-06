@@ -4,12 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".services.QuestionFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <TextView
+        android:id="@+id/question_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="نوع کولر شما چیست؟"
         android:layout_gravity="center_horizontal"
         android:layoutDirection="rtl"
         android:textDirection="rtl"
@@ -22,6 +23,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/answers_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

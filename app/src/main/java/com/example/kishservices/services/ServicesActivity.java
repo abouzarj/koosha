@@ -58,7 +58,8 @@ public class ServicesActivity extends AppCompatActivity {
         textView.setText(title);
 
         sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-        access = sharedPreferences.getString("accsess"," ");
+        access = sharedPreferences.getString("access","");
+        String pass = sharedPreferences.getString("password","");
         apiInterface = APIClient.getClient().create(APIInterface.class);
         recyclerView = findViewById(R.id.services_recyclerView);
         adapter = new ServiceRecyclerViewAdapter(serviceArrayList,this);
@@ -108,7 +109,10 @@ public class ServicesActivity extends AppCompatActivity {
     }
 
     private void getData(){
-        Call<ServicesResponse> getServices = apiInterface.SearchServices(access,"",currentPage,collection_id);
+        access = access.replaceAll("\"","");
+        String  b = "JWT " + access;
+
+        Call<ServicesResponse> getServices = apiInterface.SearchServices(b,"",currentPage,collection_id);
         getServices.enqueue(new Callback<ServicesResponse>() {
             @Override
             public void onResponse(Call<ServicesResponse> call, Response<ServicesResponse> response) {

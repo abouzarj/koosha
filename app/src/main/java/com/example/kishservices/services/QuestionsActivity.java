@@ -10,13 +10,22 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.example.kishservices.R;
+import com.example.kishservices.services.pojo.QARequest;
+import com.example.kishservices.services.pojo.QuestionsResponse;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
-public class QuestionsActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class QuestionsActivity extends AppCompatActivity implements QuestionFragment.OnDataPass {
     private ViewPagerAdapter viewPagerAdapter;
     private SwipeControlViewPager viewPager;
     private TabLayout tabLayout;
+
+    ArrayList<QuestionsResponse> questionList;
+
+    ArrayList<QARequest> qaRequestArrayList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +38,18 @@ public class QuestionsActivity extends AppCompatActivity {
         // setting up the adapter
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
-        // add the fragments
-        viewPagerAdapter.add(new QuestionFragment(), "Page 1");
-        viewPagerAdapter.add(new QuestionFragment(), "Page 2");
-        viewPagerAdapter.add(new QuestionFragment(), "Page 3");
+        Intent myIntent = getIntent();
+        questionList = (ArrayList<QuestionsResponse>) myIntent.getSerializableExtra("questions");
+
+        for(int i=0; i<questionList.size();i++){
+            QARequest qaRequest = new QARequest();
+            qaRequest.question= questionList.get(i).id;
+            qaRequestArrayList.add(qaRequest);
+            viewPagerAdapter.add(new QuestionFragment(questionList.get(i),i), "page 1");
+
+        }
+
+
 
         // Set the adapter
         viewPager.setAdapter(viewPagerAdapter);
@@ -44,7 +61,7 @@ public class QuestionsActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         ProgressBar progressBar = findViewById(R.id.progress_horizontal);
-        progressBar.setMax(viewPager.getAdapter().getCount());
+        progressBar.setMax(viewPager.getAdapter().getCount()+ 4);
         progressBar.setProgress(1);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -74,6 +91,7 @@ public class QuestionsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int b = viewPager.getCurrentItem();
                 if(b == count-1){
+                    intent.putExtra("qas",qaRequestArrayList);
                     startActivity(intent);
 
                 }else{
@@ -97,5 +115,12 @@ public class QuestionsActivity extends AppCompatActivity {
             viewPager.swipeToPreviousPage();
         }
 
+    }
+
+
+    @Override
+    public void onDataPassed(int answerId, int qaPosition) {
+        qaRequestArrayList.get(qaPosition).answer=answerId;
+        int a = 90;
     }
 }

@@ -102,7 +102,7 @@ public class GetCodeActivity extends AppCompatActivity {
                             myEdit.putBoolean("logged",true);
                             myEdit.putString("password",codeEditText.getText().toString());
                             myEdit.putString("access", response.body().access);
-                            myEdit.commit();
+                            myEdit.apply();
                             Intent intent = new Intent(GetCodeActivity.this, HomeActivity.class);
                             startActivity(intent);
                         }
@@ -174,7 +174,7 @@ public class GetCodeActivity extends AppCompatActivity {
             codeEditText.setText(matcher.group(0));
             password = matcher.group(0);
             myEdit.putString("password",password);
-            myEdit.commit();
+            myEdit.apply();
 
         }
     }

@@ -58,6 +58,8 @@ public class HomeActivity extends AppCompatActivity {
                     Log.i("loginResponseCall","inside successful response ");
 
                     myEdit.putString("access",response.body().access);
+                    myEdit.apply();
+                    int a = 90;
                 }
             }
 

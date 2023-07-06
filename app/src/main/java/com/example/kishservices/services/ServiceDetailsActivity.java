@@ -62,36 +62,42 @@ public class ServiceDetailsActivity extends AppCompatActivity {
 
         myEdit = sharedPreferences.edit();
 
-        Call<LoginResponse> loginResponseCall = apiInterface.login(sharedPreferences.getString("username",""),sharedPreferences.getString("password",""));
-        loginResponseCall.enqueue(new Callback<LoginResponse>() {
-            @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                if (response.isSuccessful()){
-                    Log.i("loginResponseCall","inside successful response ");
-
-                    myEdit.putString("access",response.body().access);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
-
-            }
-        });
+//        Call<LoginResponse> loginResponseCall = apiInterface.login(sharedPreferences.getString("username",""),sharedPreferences.getString("password",""));
+//        loginResponseCall.enqueue(new Callback<LoginResponse>() {
+//            @Override
+//            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+//                if (response.isSuccessful()){
+//                    Log.i("loginResponseCall","inside successful response ");
+//
+//                    myEdit.putString("access",response.body().access);
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<LoginResponse> call, Throwable t) {
+//
+//            }
+//        });
 
         access = sharedPreferences.getString("access","");
+        access = access.replaceAll("\"","");
         String  b = "JWT " + access;
 
         Call<ArrayList<QuestionsResponse>> questionsResponseCall = apiInterface.getQuestions(b,service.id);
         questionsResponseCall.enqueue(new Callback<ArrayList<QuestionsResponse>>() {
             @Override
             public void onResponse(Call<ArrayList<QuestionsResponse>> call, Response<ArrayList<QuestionsResponse>> response) {
+                int c = response.code();
                 if(response.isSuccessful()){
                     if(response.body().isEmpty()){
                         noQuestions = true;
+                        questionList = response.body();
+                        int a = questionList.size();
                     }else {
                         noQuestions = false;
                         questionList = response.body();
+                        int a = questionList.size();
+
                     }
 
                 }
@@ -100,7 +106,7 @@ public class ServiceDetailsActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ArrayList<QuestionsResponse>> call, Throwable t) {
-                int g = 9;
+
             }
         });
 
@@ -109,11 +115,15 @@ public class ServiceDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
+
+
                 if(noQuestions){
                     myIntent = new Intent(getBaseContext(), OrderActivity.class);
                     startActivity(myIntent);
                 }else {
                     myIntent = new Intent(getBaseContext(), QuestionsActivity.class);
+                    myIntent.putExtra("questions",questionList);
                     startActivity(myIntent);
                 }
 

@@ -3,6 +3,7 @@ package com.example.kishservices.retrofit;
 import com.example.kishservices.pojo.LoginResponse;
 import com.example.kishservices.pojo.UpdatePassResponse;
 import com.example.kishservices.pojo.Username;
+import com.example.kishservices.services.pojo.AnswersResponse;
 import com.example.kishservices.services.pojo.CollectionResponse;
 import com.example.kishservices.services.pojo.QuestionsResponse;
 import com.example.kishservices.services.pojo.ServicesResponse;
@@ -46,6 +47,12 @@ public interface APIInterface {
     })
     @GET("servicemanager/questions")
     Call<ArrayList<QuestionsResponse>> getQuestions(@Header("Authorization") String authorization, @Query("service_id") Integer service_id);
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @GET("servicemanager/answers")
+    Call<ArrayList<AnswersResponse>> getAnswers(@Header("Authorization") String authorization, @Query(("question")) Integer question);
 
 
 }
