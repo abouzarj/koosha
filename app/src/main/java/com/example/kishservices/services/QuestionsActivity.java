@@ -7,8 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
+import com.example.kishservices.HomeActivity;
 import com.example.kishservices.R;
 import com.example.kishservices.services.pojo.QARequest;
 import com.example.kishservices.services.pojo.QuestionsResponse;
@@ -48,8 +50,6 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
             viewPagerAdapter.add(new QuestionFragment(questionList.get(i),i), "page 1");
 
         }
-
-
 
         // Set the adapter
         viewPager.setAdapter(viewPagerAdapter);
@@ -102,6 +102,15 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
             }
         });
 
+        ImageView closeButton = findViewById(R.id.close_icon);
+        Intent intent1 = new Intent(this, HomeActivity.class);
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent1);
+            }
+        });
 
 
     }
@@ -121,6 +130,6 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
     @Override
     public void onDataPassed(int answerId, int qaPosition) {
         qaRequestArrayList.get(qaPosition).answer=answerId;
-        int a = 90;
+
     }
 }

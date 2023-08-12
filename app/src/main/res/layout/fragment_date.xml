@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".services.DateFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="تاریخ مراجعه متخصص را انتخاب بفرمایید"
+            android:layout_gravity="right"
+            android:textDirection="rtl"
+            android:textSize="20dp"
+            android:fontFamily="@font/estedad"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/date_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            app:cardElevation="12dp"
+            app:cardMaxElevation="24dp"
+            android:background="@color/gray"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                >
+                <TextView
+                    android:id="@+id/date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/estedad"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@id/calender_btn"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center"
+                    android:text="-/-/-"
+                    android:textSize="18dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/calender_btn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/baseline_calendar_month_24"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="8dp"/>
+
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="زمان حدودی مراجعه متخصص را انتخاب بفرمایید"
+            android:layout_gravity="right"
+            android:textDirection="rtl"
+            android:textSize="20dp"
+            android:fontFamily="@font/estedad"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/time_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            app:cardElevation="12dp"
+            app:cardMaxElevation="24dp"
+            android:background="@color/gray">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                >
+                <TextView
+                    android:id="@+id/time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/estedad"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@id/time_btn"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center"
+                    android:text="--:--"
+                    android:textSize="18dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/time_btn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/baseline_access_time_24"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="8dp"/>
+
+
+            </RelativeLayout>
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/date_next_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="30dp"
+        android:text="مرحله بعد"
+        android:layout_gravity="bottom|left"
+        app:icon="@drawable/baseline_arrow_back_24"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:iconTint="@color/white"
+        />
+
+
+</FrameLayout>

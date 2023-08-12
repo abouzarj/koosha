@@ -12,8 +12,20 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <!-- Refrence your picker theme here -->
+        <item name="numberPickerTheme">@style/customNumberPicker</item>
        
 
+    </style>
+
+    <!-- Here is your custom date picker theme -->
+    <style name="customNumberPicker">
+        <!-- use this for text color -->
+        <item name="android:textColorPrimary">@android:color/holo_green_dark</item>
+
+        <!-- use this for divider color -->
+        <item name="colorControlNormal">@android:color/holo_purple</item>
     </style>
 
 </resources>

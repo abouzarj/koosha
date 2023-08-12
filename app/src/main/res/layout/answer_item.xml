@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="80dp"
+    android:layout_height="48dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="10dp"
     app:cardCornerRadius="10dp"
     android:layout_marginTop="8dp"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
+    android:layout_marginBottom="16dp"
     android:layout_gravity="center_horizontal"
     android:foreground="?android:attr/selectableItemBackground"
     android:clickable="true"
-    app:strokeWidth="2dp"
-    app:strokeColor="@color/blue_gray_400"
+    app:cardElevation="12dp"
+    app:cardMaxElevation="36dp"
     >
 
     <RelativeLayout

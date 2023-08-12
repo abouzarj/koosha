@@ -4,70 +4,49 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import com.example.kishservices.R;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
 
-public class ExplanationFragment extends Fragment  {
+public class FinalFragment extends Fragment {
 
-    private ExtendedFloatingActionButton nextButton;
+    private ExtendedFloatingActionButton oderButton;
 
-    public EditText explanationEditText;
-
-
-
-
-    public interface OnDataPass {
-        void onDataPassed(String data);
-
+    public interface OnOrderPass{
+        void OrderPassed();
     }
 
-    private ExplanationFragment.OnDataPass dataPasser;
+    OnOrderPass orderPasser;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         // Make sure the activity implements the interface
-        if (context instanceof ExplanationFragment.OnDataPass) {
-            dataPasser = (ExplanationFragment.OnDataPass) context;
+        if (context instanceof FinalFragment.OnOrderPass) {
+            orderPasser = (FinalFragment.OnOrderPass) context;
         } else {
             throw new ClassCastException(context.toString() + " must implement OnDataPass interface.");
         }
     }
 
-
-
     @Override
     public void onDetach() {
         super.onDetach();
-        dataPasser = null;
+        orderPasser = null;
     }
 
     // To pass the data to the activity, call this method where needed
-    public void sendDataToActivity( ) {
-        if (dataPasser != null) {
-            dataPasser.onDataPassed(explanationEditText.getText().toString());
+    public void sendOrderToActivity( ) {
+        if (orderPasser != null) {
+            orderPasser.OrderPassed();
         }
     }
-
-
-
-
-
-    public ExplanationFragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,25 +58,20 @@ public class ExplanationFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_explanation, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_final, container, false);
 
-        explanationEditText = rootView.findViewById(R.id.expl_edt);
-
-        nextButton = rootView.findViewById(R.id.explanation_next_btn);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        oderButton = rootView.findViewById(R.id.final_order_btn);
+        oderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sendDataToActivity();
+                sendOrderToActivity();
             }
         });
-
-
-
 
         return rootView;
     }
 
+    public void sendOrder(){
 
-
-
+    }
 }

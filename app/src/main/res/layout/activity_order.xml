@@ -14,7 +14,8 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/order_appbar"
             android:layout_width="match_parent"
-            android:layout_height="56dp">
+            android:layout_height="56dp"
+            >
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
@@ -104,18 +105,19 @@
 
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/order_next_question"
+            android:id="@+id/final_order_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="30dp"
-            android:text="مرحله بعد"
+            android:text="ثبت نهایی"
             android:layout_gravity="bottom|left"
-            app:icon="@drawable/baseline_arrow_back_24"
             android:textStyle="bold"
             android:textColor="@color/white"
             app:iconTint="@color/white"
+            android:visibility="gone"
+            android:gravity="center"
             />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

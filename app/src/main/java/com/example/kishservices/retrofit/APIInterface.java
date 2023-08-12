@@ -3,12 +3,19 @@ package com.example.kishservices.retrofit;
 import com.example.kishservices.pojo.LoginResponse;
 import com.example.kishservices.pojo.UpdatePassResponse;
 import com.example.kishservices.pojo.Username;
+import com.example.kishservices.services.pojo.AddressRequest;
 import com.example.kishservices.services.pojo.AnswersResponse;
 import com.example.kishservices.services.pojo.CollectionResponse;
 import com.example.kishservices.services.pojo.QuestionsResponse;
+import com.example.kishservices.services.pojo.ReverseGeocodeResponse;
 import com.example.kishservices.services.pojo.ServicesResponse;
+import com.example.kishservices.services.pojo.UserMeResponse;
+import com.google.gson.JsonArray;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -17,6 +24,8 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface APIInterface {
@@ -53,6 +62,48 @@ public interface APIInterface {
     })
     @GET("servicemanager/answers")
     Call<ArrayList<AnswersResponse>> getAnswers(@Header("Authorization") String authorization, @Query(("question")) Integer question);
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @GET("servicemanager/address")
+    Call<ArrayList<AddressRequest>> getAddress(@Header("Authorization") String authorization);
+
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @GET("servicemanager/address/get_readable_address")
+    Call<ReverseGeocodeResponse>get_readable_address(@Header("Authorization") String authorization, @Query("lat") double lat, @Query("lng") double lng );
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @GET("auth/users/me")
+    Call<UserMeResponse> getUser(@Header("Authorization") String authorization);
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @FormUrlEncoded
+    @POST("servicemanager/address")
+    Call<AddressRequest> createAddress(@Header("Authorization") String authorization, @Field("latitude") String latitude, @Field("longitude") String longitude, @Field("address_text") String address_text, @Field("user") Integer user);
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @FormUrlEncoded
+    @PUT("servicemanager/address/{address_id}/")
+    Call<AddressRequest> updateAddress(@Header("Authorization") String authorization, @Path("address_id") int address_id, @Field("latitude") String latitude, @Field("longitude") String longitude, @Field("address_text") String address_text, @Field("user") Integer user);
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @FormUrlEncoded
+    @PUT("servicemanager/orders")
+
+
+
 
 
 }

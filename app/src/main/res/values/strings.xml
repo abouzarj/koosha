@@ -3,4 +3,6 @@
     <string name="new_account"><u>ایجاد حساب جدید</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello order fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_maps1">MapsActivity1</string>
 </resources>
