@@ -1,76 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".services.ServicesCategoryFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".services.ServicesCategoryFragment">
 
     <LinearLayout
         android:id="@+id/collection_no_internet"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:visibility="gone">
+
         <ImageView
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_gravity="center"
             android:layout_margin="4dp"
-            android:src="@drawable/baseline_wifi_off_24"/>
+            android:src="@drawable/baseline_wifi_off_24" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="لطفاً اتصال خود به اینترنت را بررسی کنید."
-            android:fontFamily="@font/estedad"
-            android:textStyle="bold"
-            android:textSize="18dp"
             android:layout_margin="4dp"
-            android:textColor="@color/black"/>
+            android:fontFamily="@font/estedad"
+            android:text="لطفاً اتصال خود به اینترنت را بررسی کنید."
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
         <Button
             android:id="@+id/try_again_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="تلاش دوباره"
             android:layout_margin="4dp"
-            android:textColor="@color/black"/>
+            android:text="تلاش دوباره"
+            android:textColor="@color/black" />
     </LinearLayout>
-
 
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:contentInsetLeft="0dp"
-        android:contentInsetStart="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        android:contentInsetRight="0dp"
-        android:contentInsetEnd="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetEnd="0dp"
-        android:elevation="10dp"
         android:background="@color/gr500"
-        >
+        android:contentInsetStart="0dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
+        android:elevation="10dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@drawable/er_border"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginRight="8dp"
+            android:layout_height="56dp"
             android:layout_marginLeft="8dp"
-            >
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/er_border"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/city_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:drawableLeft="@drawable/baseline_location_on_24"
+                android:fontFamily="@font/estedad"
+                android:text="کیش"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/white"
+                />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="4dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/gr500"/>
 
             <RelativeLayout
                 android:id="@+id/collection_search_bar"
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"
                 android:background="?attr/selectableItemBackground"
                 android:clickable="true"
@@ -82,28 +105,25 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginRight="8dp"
-                    android:src="@drawable/baseline_search_24"
-                    />
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/baseline_search_24" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="24dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="14dp"
+                    android:layout_marginTop="14dp"
                     android:layout_marginRight="8dp"
+                    android:layout_marginBottom="14dp"
                     android:layout_toLeftOf="@id/logo"
-                    android:text="جستجو در خدمات"
                     android:fontFamily="@font/estedad"
-                    />
+                    android:text="جستجو در خدمات" />
 
             </RelativeLayout>
 
 
         </LinearLayout>
-
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -120,8 +140,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/cat_recycler"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-
+                android:layout_height="match_parent" />
 
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
@@ -131,14 +150,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="gone"
-            />
-
+            android:visibility="gone" />
 
 
     </FrameLayout>
-
-
 
 
 </LinearLayout>

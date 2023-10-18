@@ -39,13 +39,14 @@ public class ServiceDetailsActivity extends AppCompatActivity {
     Intent myIntent;
 
     SharedPreferences.Editor myEdit;
+    Service service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_details);
 
-        Service service = (Service) getIntent().getSerializableExtra("object");
+        service = (Service) getIntent().getSerializableExtra("object");
 
         ((CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar)).setTitle(service.title);
 
@@ -120,10 +121,12 @@ public class ServiceDetailsActivity extends AppCompatActivity {
 
                 if(noQuestions){
                     myIntent = new Intent(getBaseContext(), OrderActivity.class);
+                    myIntent.putExtra("service_id", service.id);
                     startActivity(myIntent);
                 }else {
                     myIntent = new Intent(getBaseContext(), QuestionsActivity.class);
                     myIntent.putExtra("questions",questionList);
+                    myIntent.putExtra("service_id", service.id);
                     startActivity(myIntent);
                 }
 

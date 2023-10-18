@@ -8,12 +8,12 @@ public class QARequest implements Serializable {
 
     @SerializedName("order")
     @Expose
-    public Object order;
+    public Integer order;
     @SerializedName("question")
     @Expose
-    public Object question;
+    public Integer question;
     @SerializedName("answer")
     @Expose
-    public Object answer;
+    public Integer answer;
 
 }

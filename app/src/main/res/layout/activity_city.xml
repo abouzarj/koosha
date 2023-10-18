@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".services.CityActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/city_no_internet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:src="@drawable/baseline_wifi_off_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="لطفاً اتصال خود به اینترنت را بررسی کنید."
+            android:fontFamily="@font/estedad"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_margin="4dp"
+            android:textColor="@color/black"/>
+        <Button
+            android:id="@+id/search_city_try_again_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="تلاش دوباره"
+            android:layout_margin="4dp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
+        android:elevation="10dp"
+        android:background="@color/gr500">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/city_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:queryHint="جستجو در شهرها"
+            android:background="@drawable/er_border"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:elevation="10dp"
+            android:layoutDirection="rtl"
+            app:iconifiedByDefault="false"
+            android:textDirection="rtl"
+            android:theme="@style/SearchViewStyle"
+            android:focusedByDefault="true"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/city_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</LinearLayout>

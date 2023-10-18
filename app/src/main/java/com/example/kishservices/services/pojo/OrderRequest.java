@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 public class OrderRequest {
-
+    public int id;
     public String explanation;
     public Date due_date;
     public String order_state;

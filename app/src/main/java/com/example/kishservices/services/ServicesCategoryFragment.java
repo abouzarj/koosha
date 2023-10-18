@@ -121,6 +121,16 @@ public class ServicesCategoryFragment extends Fragment  {
             recyclerView.setLayoutManager(layoutManager);
             recyclerView.setAdapter(adapter);
 
+
+            Button button = rootView.findViewById(R.id.city_btn);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), CityActivity.class);
+                    startActivity(intent);
+                }
+            });
+
         }
 
         SwipeRefreshLayout swipeRefreshLayout = rootView.findViewById(R.id.collection_swipe_refresh);
@@ -163,7 +173,8 @@ public class ServicesCategoryFragment extends Fragment  {
     }
 
     private void getAccess(){
-        Call<LoginResponse> loginResponseCall = apiInterface.login(sharedPreferences.getString("username",""),sharedPreferences.getString("password",""));
+        //        Call<LoginResponse> loginResponseCall = apiInterface.login(sharedPreferences.getString("username",""),sharedPreferences.getString("password",""));
+        Call<LoginResponse> loginResponseCall = apiInterface.login("abouzar","wxkxbqx8");
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {

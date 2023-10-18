@@ -19,6 +19,33 @@
         android:layout_height="match_parent"
         >
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="12dp"
+            app:cardMaxElevation="24dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/gray"
+            android:layout_gravity="right">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="آدرس"
+                android:fontFamily="@font/estedad"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:layout_margin="4dp"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+        </com.google.android.material.card.MaterialCardView>
+
         <fragment
             android:id="@+id/map"
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,85 +59,6 @@
             map:cameraTilt="30"
             map:cameraZoom="13"
             />
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="vertical">-->
-
-<!--            &lt;!&ndash; TODO: Update blank fragment layout &ndash;&gt;-->
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text=" آدرس"-->
-<!--                android:textDirection="rtl"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textSize="18dp"-->
-<!--                android:fontFamily="@font/estedad"-->
-<!--                android:layout_gravity="right"-->
-<!--                android:layout_margin="16dp"-->
-<!--                android:padding="2dp"-->
-<!--                />-->
-
-<!--            <com.google.android.material.card.MaterialCardView-->
-<!--                android:id="@+id/addr_card"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:cardCornerRadius="10dp"-->
-<!--                app:cardElevation="12dp"-->
-<!--                app:cardMaxElevation="24dp"-->
-<!--                android:layout_marginRight="16dp"-->
-<!--                android:layout_marginLeft="16dp">-->
-
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_margin="8dp"-->
-<!--                    android:orientation="vertical"-->
-<!--                    >-->
-
-<!--                    <TextView-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="آدرس شما"-->
-<!--                        android:gravity="center_horizontal"-->
-<!--                        android:layout_margin="4dp"-->
-<!--                        android:fontFamily="@font/estedad"/>-->
-
-<!--                    <EditText-->
-<!--                        android:id="@+id/address_text"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="48dp"-->
-<!--                        android:layout_marginStart="8dp"-->
-<!--                        android:layout_marginTop="8dp"-->
-<!--                        android:layout_marginEnd="8dp"-->
-<!--                        android:layout_marginBottom="8dp"-->
-<!--                        android:fontFamily="@font/estedad"-->
-<!--                        android:hint="آدرس شما.."-->
-<!--                        android:text="@{viewModel.addressRequestMutableLiveData}"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        android:textSize="16dp"-->
-<!--                        />-->
-
-<!--                    <androidx.appcompat.widget.AppCompatButton-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:text="تغییر"-->
-<!--                        android:layout_marginLeft="4dp"-->
-<!--                        android:id="@+id/save_add_btn"-->
-<!--                        />-->
-
-
-
-
-<!--                </LinearLayout>-->
-
-<!--            </com.google.android.material.card.MaterialCardView>-->
-
-<!--        </LinearLayout>-->
-
-
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/address_next_btn"

@@ -18,7 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KishServices"
         tools:targetApi="31">
-
+        <activity
+            android:name=".services.CityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.LawActivity"
+            android:exported="false" />
+        <activity
+            android:name=".profile.UpdateNameActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -33,7 +41,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
-
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -42,9 +49,6 @@
             android:name=".services.MapsActivity1"
             android:exported="false"
             android:label="@string/title_activity_maps1" />
-
-
-
         <activity
             android:name=".services.OrderActivity"
             android:exported="false" />

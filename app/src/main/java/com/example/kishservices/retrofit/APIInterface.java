@@ -3,12 +3,19 @@ package com.example.kishservices.retrofit;
 import com.example.kishservices.pojo.LoginResponse;
 import com.example.kishservices.pojo.UpdatePassResponse;
 import com.example.kishservices.pojo.Username;
+import com.example.kishservices.profile.pojo.TermResponse;
+import com.example.kishservices.profile.pojo.UserInfoResponse;
 import com.example.kishservices.services.pojo.AddressRequest;
 import com.example.kishservices.services.pojo.AnswersResponse;
 import com.example.kishservices.services.pojo.CollectionResponse;
+import com.example.kishservices.services.pojo.CustomerResponse;
+import com.example.kishservices.services.pojo.OrderPostRequest;
+import com.example.kishservices.services.pojo.OrderRequest;
+import com.example.kishservices.services.pojo.QARequest;
 import com.example.kishservices.services.pojo.QuestionsResponse;
 import com.example.kishservices.services.pojo.ReverseGeocodeResponse;
 import com.example.kishservices.services.pojo.ServicesResponse;
+import com.example.kishservices.services.pojo.SupplierResponse;
 import com.example.kishservices.services.pojo.UserMeResponse;
 import com.google.gson.JsonArray;
 
@@ -18,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -99,10 +107,39 @@ public interface APIInterface {
     @Headers({
             "Accept: application/json",
     })
-    @FormUrlEncoded
-    @PUT("servicemanager/orders")
+    @POST("servicemanager/orders/")
+    Call<OrderRequest> createOrder(@Header("Authorization") String authorization, @Body OrderPostRequest orderPostRequest);
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @GET("servicemanager/customers/me")
+    Call<CustomerResponse> getCustomer(@Header("Authorization") String authorization);
 
 
+    @Headers({
+            "Accept: application/json",
+    })
+    @POST("servicemanager/qas/")
+    Call<QARequest> sendQa(@Header("Authorization") String authorization, @Body QARequest qaRequest);
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @GET("auth/users/me")
+    Call<UserInfoResponse> getUserInfo(@Header("Authorization") String authorization);
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @PUT("auth/users/me/")
+    Call<UserInfoResponse> updateUserInfo(@Header("Authorization") String authorization, @Body UserInfoResponse userInfoResponse);
+
+    @Headers({
+            "Accept: application/json",
+    })
+    @GET("servicemanager/terms")
+    Call<ArrayList<TermResponse>> getTerm(@Header("Authorization") String authorization);
 
 
 

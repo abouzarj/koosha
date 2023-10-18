@@ -28,6 +28,8 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
 
     ArrayList<QARequest> qaRequestArrayList = new ArrayList<>();
 
+    int serviceID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,10 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
 
         Intent myIntent = getIntent();
         questionList = (ArrayList<QuestionsResponse>) myIntent.getSerializableExtra("questions");
+
+        if( myIntent.hasExtra("service_id")){
+            serviceID = myIntent.getIntExtra("service_id",0);
+        }
 
         for(int i=0; i<questionList.size();i++){
             QARequest qaRequest = new QARequest();
@@ -92,6 +98,7 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
                 int b = viewPager.getCurrentItem();
                 if(b == count-1){
                     intent.putExtra("qas",qaRequestArrayList);
+                    intent.putExtra("service_id", serviceID);
                     startActivity(intent);
 
                 }else{

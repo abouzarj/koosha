@@ -48,7 +48,9 @@ public class DateFragment extends Fragment {
     private ExtendedFloatingActionButton nextButton;
 
     public interface OnDatePass{
-        void onDatePassed(Date date);
+        void onDatePassed(java.util.Date date);
+
+
     }
 
     private OnDatePass datePasser;
@@ -73,6 +75,7 @@ public class DateFragment extends Fragment {
     // To pass the data to the activity, call this method where needed
     public void sendDateToActivity( ) {
         if (datePasser != null) {
+
             datePasser.onDatePassed(myDate);
         }
     }
@@ -120,7 +123,7 @@ public class DateFragment extends Fragment {
                         Log.d(TAG, "onDateSelected: " + PersianCalendarUtils.isPersianLeapYear(persianPickerDate.getPersianYear()));//true
                         Toast.makeText(getActivity(), persianPickerDate.getPersianYear() + "/" + persianPickerDate.getPersianMonth() + "/" + persianPickerDate.getPersianDay(), Toast.LENGTH_SHORT).show();
                         dateText.setText(persianPickerDate.getPersianYear() + "/" + persianPickerDate.getPersianMonth() + "/" + persianPickerDate.getPersianDay());
-                        myDate = persianPickerDate.getGregorianDate();
+                        myDate =  persianPickerDate.getGregorianDate();
                         isDateSet= true;
                     }
 

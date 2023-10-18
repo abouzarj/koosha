@@ -3,14 +3,441 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile.ProfileFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".profile.ProfileFragment"
+    android:orientation="vertical"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="profile fragmnet"
-        android:gravity="center"
-        android:textColor="@color/grc_400"/>
+        android:orientation="vertical"
+        android:background="@color/white">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            android:elevation="10dp"
+            android:background="@color/gr500"
+            android:layoutDirection="rtl"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="حساب کاربری"
+                android:layout_marginRight="16dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/estedad"
+                android:textStyle="bold"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/cardviewprofile">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:id="@+id/name_layout">
+
+                <ImageView
+                    android:id="@+id/nni"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baseline_arrow_back_ios_24"
+                    android:layout_marginLeft="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="4dp"
+                    android:layout_toLeftOf="@+id/nnni"
+                    android:layout_toRightOf="@+id/nni">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="نام و نام خانوادگی"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/estedad"/>
+
+                    <TextView
+                        android:id="@+id/fl_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/estedad"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/nnni"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/baseline_person_outline_24"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/cardviewprofile"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/uif"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baseline_arrow_back_ios_24"
+                    android:layout_marginLeft="8dp"
+                    android:visibility="invisible"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="4dp"
+                    android:layout_toLeftOf="@+id/uic"
+                    android:layout_toRightOf="@+id/uif">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="نام کاربری"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/estedad"/>
+
+                    <TextView
+                        android:id="@+id/usernamee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/estedad"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/uic"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/outline_account_circle_24"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/cardviewprofile"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/phoni"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baseline_arrow_back_ios_24"
+                    android:layout_marginLeft="8dp"
+                    android:visibility="invisible"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="4dp"
+                    android:layout_toLeftOf="@+id/phonea"
+                    android:layout_toRightOf="@+id/phoni">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تلفن"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/estedad"/>
+
+                    <TextView
+                        android:id="@+id/user_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/estedad"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/phonea"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/baseline_phone_iphone_24"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/cardviewprofile"
+            >
+
+            <RelativeLayout
+                android:id="@+id/law_rel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/ghi"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baseline_arrow_back_ios_24"
+                    android:layout_marginLeft="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="4dp"
+                    android:layout_toLeftOf="@id/lawi"
+                    android:layout_toRightOf="@id/ghi">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="قوانین برنامه"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/estedad"
+                        />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/lawi"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/outline_library_books_24"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/cardviewprofile"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/bri"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baseline_arrow_back_ios_24"
+                    android:layout_marginLeft="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="4dp"
+                    android:layout_toLeftOf="@id/updai"
+                    android:layout_toRightOf="@id/bri">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="بروز رسانی"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/estedad"
+                        />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/updai"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/baseline_update_24"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/cardviewprofile"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:clickable="true"
+                android:id="@+id/exit_acount">
+
+                <ImageView
+                    android:id="@+id/khi"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baseline_arrow_back_ios_24"
+                    android:layout_marginLeft="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="4dp"
+                    android:layout_toLeftOf="@id/loi"
+                    android:layout_toRightOf="@id/khi">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="خروج از حساب کاربری"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:fontFamily="@font/estedad"
+                        />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/loi"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/logout"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/profile_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+
+
+
+
+
+
+
 
 </FrameLayout>

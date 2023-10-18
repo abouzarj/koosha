@@ -49,8 +49,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
         bottomNavigationView = findViewById(R.id.bottom_nave);
+        //        Call<LoginResponse> loginResponseCall = apiInterface.login(sharedPreferences.getString("username",""),sharedPreferences.getString("password",""));
 
-        Call<LoginResponse> loginResponseCall = apiInterface.login(sharedPreferences.getString("username",""),sharedPreferences.getString("password",""));
+        Call<LoginResponse> loginResponseCall = apiInterface.login("abouzar","wxkxbqx8");
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {

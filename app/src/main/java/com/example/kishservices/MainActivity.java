@@ -40,27 +40,30 @@ public class MainActivity extends AppCompatActivity {
         // Storing data into SharedPreferences
         sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
 
-        final Handler handler = new Handler();
-        final Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                if(sharedPreferences.contains("logged")){
-                    if(sharedPreferences.getBoolean("logged", false)){
-                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                        startActivity(intent);
-                    }else if( !sharedPreferences.getBoolean("logged", false) ){
-                        Intent intent  = new Intent(MainActivity.this,LoginActivity.class);
-                        startActivity(intent);
-                    }
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
 
-                }else if(!sharedPreferences.contains("logged")){
-                    Intent intent  = new Intent(MainActivity.this,LoginActivity.class);
-                    startActivity(intent);
-                }
-            }
-        };
-
-        handler.postDelayed(runnable,2000);
+//        final Handler handler = new Handler();
+//        final Runnable runnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                if(sharedPreferences.contains("logged")){
+//                    if(sharedPreferences.getBoolean("logged", false)){
+//                        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+//                        startActivity(intent);
+//                    }else if( !sharedPreferences.getBoolean("logged", false) ){
+//                        Intent intent  = new Intent(MainActivity.this,LoginActivity.class);
+//                        startActivity(intent);
+//                    }
+//
+//                }else if(!sharedPreferences.contains("logged")){
+//                    Intent intent  = new Intent(MainActivity.this,LoginActivity.class);
+//                    startActivity(intent);
+//                }
+//            }
+//        };
+//
+//        handler.postDelayed(runnable,2000);
 
 
     }

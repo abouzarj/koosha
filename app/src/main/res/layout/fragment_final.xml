@@ -33,6 +33,7 @@
                     android:textStyle="bold"
                     android:gravity="center"
                     android:textSize="18dp"
+                    android:textColor="@color/black"
                     />
 
                 <TextView
@@ -42,6 +43,7 @@
                     style="@style/Final"
                     android:text="توضیحات"
                     android:textStyle="bold"
+                    android:textColor="@color/black"
                     />
 
                 <TextView
@@ -56,7 +58,8 @@
                     android:layout_height="wrap_content"
                     style="@style/Final"
                     android:text="آدرس"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/addre_text"
@@ -71,13 +74,15 @@
                     android:layout_height="wrap_content"
                     style="@style/Final"
                     android:text="زمان"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/date_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/Final"/>
+                    style="@style/Final"
+                    />
 
             </LinearLayout>
 
